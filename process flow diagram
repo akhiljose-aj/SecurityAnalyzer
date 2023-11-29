@@ -1,0 +1,38 @@
+Start
+|
+v
+Enter the URL
+|
+v
+Run Tests
+|
+v
+|---> Send XSS payloads
+|       |
+|       v
+|   Check for potential XSS vulnerabilities
+|       |
+|       v
+|   If vulnerabilities found, show message
+|
+|---> Send SQL Injection payloads
+|       |
+|       v
+|   Check for potential SQL Injection vulnerabilities
+|       |
+|       v
+|   If vulnerabilities found, show message
+|
+|---> Send CSRF requests
+|       |
+|       v
+|   Check for potential CSRF vulnerabilities
+|       |
+|       v
+|   If vulnerabilities found, show message
+|
+v
+Show test results
+|
+v
+End

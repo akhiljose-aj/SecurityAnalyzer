@@ -1,0 +1,71 @@
+  +-------------------+     +--------------+     +-------------+
+       |   User Interface  |<--->| Python Code  |<--->|   External  |
+       |      (GUI)        |     |   (Script)   |     |  Components |
+       +-------------------+     +--------------+     +-------------+
+                 |                  |                   |
+                 |                  |                   |
+         +-------|------------------|-------------------|-------+
+         |       v                  v                   v       |
+         |   +----------------+   +----------------+   +----------------+
+         |   |   URL Entry    |   |   Run Tests    |   |   Progressbar   |
+         |   |   (Text Input) |   |   (Button)     |   |                |
+         |   +----------------+   +----------------+   +----------------+
+         |            |                |                       |
+         |            |                |                       |
+         |            v                v                       |
+         |   +----------------+   +----------------+           |
+         |   |   Target URL  |   |   Send HTTP   |           |
+         |   |   (Data)      |   |   Requests    |           |
+         |   +----------------+   +----------------+           |
+         |            |                |                       |
+         |            |                |                       |
+         |            v                v                       |
+         |   +----------------+   +----------------+           |
+         |   |   XSS Payloads |   |   SQL Payloads |           |
+         |   |   (Data List)  |   |   (Data List)  |           |
+         |   +----------------+   +----------------+           |
+         |            |                |                       |
+         |            |                |                       |
+         |            v                v                       |
+         |   +----------------+   +----------------+           |
+         |   |   Actions     |   |   Actions     |           |
+         |   |   (Data List)  |   |   (Data List)  |           |
+         |   +----------------+   +----------------+           |
+         |            |                |                       |
+         |            |                |                       |
+         |            v                v                       |
+         |   +----------------+   +----------------+           |
+         |   |  Response     |   |   HTTP        |           |
+         |   |  (Data)       |   |  Requests     |           |
+         |   |  (Result)     |   |  (Result)     |           |
+         |   +----------------+   +----------------+           |
+         |                                  |                   |
+         +----------------------------------+-------------------+
+
+
+
+notes
+
+In this DFD:
+
+The "User Interface" component represents the graphical user interface (GUI) created using Tkinter.
+The "Python Code (Script)" component includes the Python script that contains the logic for running security tests.
+The "External Components" represent external libraries and services,
+such as the requests library for making HTTP requests.
+
+The flow of data and interactions in the system is as follows:
+
+1)The user interacts with the GUI by entering a target URL and clicking the "Run Tests" button.
+2)The "URL Entry" component collects the target URL input from the user.
+3)The "Run Tests" button triggers the execution of the "Run Tests" function in the Python code.
+4)The Python code processes the input, including the target URL, XSS payloads, SQL payloads, and actions.
+5)It sends HTTP requests to the external components (e.g., external services) using the requests library.
+6)The external components receive the requests and send responses back to the Python code.
+7)The Python code analyzes the responses and checks for potential security vulnerabilities (XSS, SQL injection, CSRF).
+8)The results are displayed in the GUI using message boxes.
+
+This DFD provides a high-level overview of how data flows and how the components interact in the security testing tool system.
+
+
+
+
